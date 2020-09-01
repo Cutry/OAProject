@@ -5,11 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserInfo {
+public class UserInfo implements Serializable {
 
     /**
      * id
@@ -27,6 +29,14 @@ public class UserInfo {
      * 用户状态
      */
     private Integer status;
+    /**
+     * 真实姓名
+     */
+    private String realName;
+    /**
+     * 手机号
+     */
+    private String phone;
     /**
      * 创建时间
      */
