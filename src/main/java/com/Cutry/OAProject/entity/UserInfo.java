@@ -41,4 +41,15 @@ public class UserInfo implements Serializable {
      * 创建时间
      */
     private Integer createTime;
+    /**
+     * 角色id
+     */
+    private Long roleId;
+
+
+//    下面的字段数据中不存在
+    /**
+     * 角色名称
+     */
+    private String roleName;
 }

@@ -24,5 +24,6 @@ mybatis:
 logging:
   level:
     com:
-      example:
-        mapper : debug
+      Cutry:
+        OAProject:
+          Dao: debug

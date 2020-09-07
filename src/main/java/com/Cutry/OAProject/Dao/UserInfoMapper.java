@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface UserInfoMapper {
 
@@ -13,5 +15,7 @@ public interface UserInfoMapper {
 
     @ResultMap("UserInfoResultMap")
     @Select("select * from user_info where userName=#{userName} and password=#{password} and status=1")
-    UserInfo findByUserNameAndPassword(String userName, String password);
+    UserInfo findByUserNameAndPassword(@Param("userName") String userName,@Param("password") String password);
+
+    List<UserInfo> getUserInfoPageCondition(@Param("userName") String userName,@Param("roleId") Long roleId);
 }
