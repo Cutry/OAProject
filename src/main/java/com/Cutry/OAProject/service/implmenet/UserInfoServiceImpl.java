@@ -47,4 +47,26 @@ public class UserInfoServiceImpl implements UserInfoService {
         response.setData(pageInfo);
         return response;
     }
+
+    @Override
+    public Object addUser(UserInfo userInfo) {
+        JsonResponse response = new JsonResponse();
+        userInfoMapper.insert(userInfo);
+        response.setData(userInfo);
+        return response;
+    }
+
+    @Override
+    public Object editUser(UserInfo userInfo) {
+        JsonResponse response = new JsonResponse();
+        userInfoMapper.update(userInfo);
+        return response;
+    }
+
+    @Override
+    public Object delUser(Long id) {
+        JsonResponse response = new JsonResponse();
+        userInfoMapper.del(id);
+        return response;
+    }
 }
