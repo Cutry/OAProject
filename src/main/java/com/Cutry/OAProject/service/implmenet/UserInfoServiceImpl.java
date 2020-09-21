@@ -42,8 +42,6 @@ public class UserInfoServiceImpl implements UserInfoService {
         JsonResponse response = new JsonResponse();
         if (pageNum < 1) pageNum = 1;
         if (pageSize < 1) pageSize = 10;
-        System.out.println("pageNum: " + pageNum);
-        System.out.println("pageSize: " + pageSize);
         PageHelper.startPage(pageNum, pageSize);
         List<UserInfo> list = userInfoMapper.getUserInfoPageCondition(userName, roleId);
         PageInfo<UserInfo> pageInfo = new PageInfo<>(list);
