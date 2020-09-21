@@ -17,7 +17,7 @@
     <select id="getUserInfoPageCondition" resultMap="UserInfoResultMap">
         select * from user_info
         <where>
-            1 = 1
+            status = 1
             <if test="userName != '' and userName != null">
                 and userName like concat ('%', #{userName}, '%')
             </if>

@@ -20,6 +20,8 @@ public class UserInfoController {
                                            @RequestParam(required = false, defaultValue = "1") Integer pageNum,
                                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
+        System.out.println("pageNum: " + pageNum);
+        System.out.println("pageSize: " + pageSize);
         return userInfoService.getUserInfoPageCondition(userName, roleId, pageNum, pageSize);
     }
 

@@ -26,6 +26,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public Object findByUserNameAndPassword(String userName, String password) {
         JsonResponse response = new JsonResponse();
+        System.out.println("userName: " + userName + "; password : " + password);
         UserInfo userInfo = userInfoMapper.findByUserNameAndPassword(userName, password);
         if (userInfo != null && userInfo.getId() > 0) {
             userInfo.setPassword("");
@@ -41,6 +42,8 @@ public class UserInfoServiceImpl implements UserInfoService {
         JsonResponse response = new JsonResponse();
         if (pageNum < 1) pageNum = 1;
         if (pageSize < 1) pageSize = 10;
+        System.out.println("pageNum: " + pageNum);
+        System.out.println("pageSize: " + pageSize);
         PageHelper.startPage(pageNum, pageSize);
         List<UserInfo> list = userInfoMapper.getUserInfoPageCondition(userName, roleId);
         PageInfo<UserInfo> pageInfo = new PageInfo<>(list);
